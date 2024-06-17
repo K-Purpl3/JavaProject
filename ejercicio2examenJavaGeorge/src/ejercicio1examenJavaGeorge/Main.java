@@ -14,7 +14,7 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        boolean run = true;//para el bucle del programa
+        boolean run = true;//mientras run sea true el programa ejutara el primer case, el programa se parara ci se elige el case 5
 
         while (run) {
             System.out.println("Seleccione una opción:");
