@@ -1,5 +1,5 @@
 
-package ejercicio1examenJavaGeorge;
+package ej1_good;
 
 /**
  *

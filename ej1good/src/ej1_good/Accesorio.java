@@ -1,4 +1,4 @@
-package ejercicio1examenJavaGeorge;
+package ej1_good;
 
 public class Accesorio {
     private String nombre;
