@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package ejercicio1examenJavaGeorge;
+package ej1_good;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,7 +14,7 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        boolean run = true;//mientras run sea true el programa ejutara el primer case, el programa se parara ci se elige el case 5
+        boolean run = true;//mientras run sea true el programa ejecutara el primer case, el programa se parara ci se elige el case 5
 
         while (run) {
             System.out.println("Seleccione una opción:");
@@ -25,7 +25,7 @@ public class Main {
             System.out.println("5. Salir");
             int option = scanner.nextInt();
             scanner.nextLine(); // Consume newline
-
+            //dependiendo de la opcion que se elija se ejecutara un metodo u otro
             switch (option) {
                 case 1:
                     añadirFigura(scanner);
@@ -60,27 +60,27 @@ public class Main {
         System.out.print("Nombre: ");
         String nombre = scanner.nextLine();
         System.out.print("Anio de lanzamiento: ");
-        int año = scanner.nextInt();
+        int anio = scanner.nextInt();
         System.out.print("Precio base: ");
         double precioBase = scanner.nextDouble();
         scanner.nextLine(); // crea nueva linea
-        System.out.print("Estado (precintada/en su embalaje original/sin embalaje original): ");
+        System.out.print("Estado (precintada/con embalaje original/sin embalaje original): ");
         String estado = scanner.nextLine();
 
         switch (tipo) {
             case 1:
                 //aniade figura de accion
-                figuras.add(new FiguraAccion(nombre, año, precioBase, estado));
+                figuras.add(new FiguraAccion(nombre, anio, precioBase, estado));
                 break;
             case 2:
                 System.out.print("Franquicia: ");
                 String franquicia = scanner.nextLine();
-                figuras.add(new Estatua(nombre, año, franquicia, precioBase, estado));//aniade una estatua
+                figuras.add(new Estatua(nombre, anio, franquicia, precioBase, estado));//aniade una estatua
                 break;
             case 3:
                 System.out.print("¿Es edición limitada? (true/false): ");
                 boolean esEdicionLimitada = scanner.nextBoolean();
-                figuras.add(new FunkoPop(nombre, año, esEdicionLimitada, precioBase, estado));//aniade un funko
+                figuras.add(new FunkoPop(nombre, anio, esEdicionLimitada, precioBase, estado));//aniade un funko
                 break;
             default:
                 System.out.println("Tipo de figura no válido.");
@@ -93,9 +93,13 @@ public class Main {
         FiguraAccion figura = null;
 
         //este coso de aqui busca una figura de accion en la lista de figuras
-        for (Figura f : figuras) {  //figura f : figuras | Figura f es la variable que se usa para referisrse al elemento actual en cada iteracion
-                                    // figuras es la coleccion sobre la que se esta iterando, el ARRAYLIST, por cada
-            if (f instanceof FiguraAccion && f.getNombre().equalsIgnoreCase(nombreFigura)) { //esto comprueba si el objeto f es una instancia de la clase FiguraAccion e ignora si el nombre esta en mayuscula o no
+        //figura f : figuras | Figura f es la variable que se usa para referisrse al elemento actual en cada iteracion
+        // figuras es la coleccion sobre la que se esta iterando, el ARRAYLIST, por cada
+        //iterar consiste en una repeticion de un bloque de sentencias un numero determinado de veces o hasta que se cumpla una condicion
+        //es como un for (int i; i<figura; i++) type shit
+        for (Figura f : figuras) {
+            if (f instanceof FiguraAccion && f.getNombre().equalsIgnoreCase(nombreFigura)) {
+                //esto comprueba si el objeto f es una instancia de la clase FiguraAccion e ignora si el nombre esta en mayuscula o no
                 figura = (FiguraAccion) f;      //si ambas condiciones en la linea anterior se cumplen se reliza una conversion del objeto
                 break;                          //la variable figura se asigna al objeto 'f' convertido a FiguraAccion, esto permite poder usar los metodos y propiedades especificos de FiguraAccion
             }
@@ -119,7 +123,7 @@ public class Main {
     private static void mostrarListado() {
         for (Figura figura : figuras) {
             System.out.println("Nombre: " + figura.getNombre() + ", Precio Base: " + figura.getPrecioBase() + ", Precio Real: " + figura.calcularPrecioReal());
-            // lo de los instanceof es para comprobar si un objeto es una unstancia de una clase o sublase
+            // lo de los instanceof es para comprobar si un objeto es una instancia de una clase o sublase
         }
     }
 
