@@ -106,7 +106,8 @@ public class Main {
         }
         // Si se encuentra la figura, se piden los datos del accesorio y se añade
         if (figura != null) {   //figura != null quiere decir que mostrara lo siguiente siempre y cuando no este vacio, es decir
-                                //tiene que haber una ifugra para pdoer aniadir un accesorio
+                                //tiene que haber una fiugra para pdoer aniadir un accesorio
+                                //ahora que lo pienso podria haber cambiado lo del if por lo del else id poner figura = null
             System.out.print("Nombre del accesorio: ");
             String nombreAccesorio = scanner.nextLine();
             System.out.print("Material del accesorio: ");

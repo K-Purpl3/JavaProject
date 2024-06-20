@@ -12,7 +12,7 @@ public class FunkoPop extends Figura {
     //booleano para saber si es edicion limitada o no, esto afecta
     private boolean esEdicionLimitada;
 
-    //constructor de la clase FunkoPop
+    //constructor de la clase FunkoPop, paso de hacer overloaded constructors
     public FunkoPop(String nombre, int anioLanzamiento, boolean esEdicionLimitada, double precioBase, String estado) {
         super(nombre, anioLanzamiento, precioBase, estado);//lamada al constructor de la superclase Figura, con esto no tenemos que hacer el this.A = a2; p.ej
         this.esEdicionLimitada = esEdicionLimitada;//inicializacion de atributo propio
